@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inkspare™ | Amanyu Supplies N Co.</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --fg: #333;
+      --bg-dark: #111;
+      --fg-dark: #ccc;
+      --accent: #e63946;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      transition: all 0.3s ease;
+    }
+    body.dark {
+      --bg: #111;
+      --fg: #ccc;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeInDown 0.8s ease forwards;
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.3rem 0.6rem;
+      transition: 0.3s;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      left: 0;
+      bottom: 0;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    .toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      border-radius: 4px;
+      z-index: 99;
+    }
+    .hero, .features, .reviews, footer {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .hero {
+      animation: fadeInUp 1s ease forwards;
+    }
+    .features {
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+    .reviews {
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+    .hero img {
+      max-width: 300px;
+      margin-bottom: 2rem;
+      width: 90%;
+      animation: popIn 0.8s ease;
+    }
+    .price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    .btn {
+      background-color: #222;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #111;
+      color: #ccc;
+      font-size: 0.9rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 1s;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle" onclick="document.body.classList.toggle('dark')">🌙</button>
+  <header>
+    <h1>Inkspare™</h1>
+    <p>By Amanyu Supplies N Co.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="buy.html">Buy</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <img src="pen.jpg" alt="Inkspire Pen" />
+    <h2>Engineered for Elegance. Used by Amanyu.</h2>
+    <p>The pen that’s changing the way ideas flow. Limited high-demand stock only.</p>
+    <div class="price">₹799 / $9.99</div>
+    <a href="buy.html"><button class="btn">Buy Now</button></a>
+  </section>
+  <section class="features">
+    <h3>Why Inkspire?</h3>
+    <ul style="list-style:none; font-size: 1.1rem;">
+      <li>✅ SmoothFlow™ hybrid gel ink</li>
+      <li>✅ Matte-finished aluminum body</li>
+      <li>✅ Balanced for long writing sessions (2g)</li>
+      <li>✅ Sleek, minimalist look</li>
+    </ul>
+  </section>
+  <section class="reviews">
+    <h3>What Users Say</h3>
+    <blockquote style="margin: 1rem auto; max-width: 500px;">“This pen feels like writing with air. Never going back.” — Amanyuu</blockquote>
+    <blockquote style="margin: 1rem auto; max-width: 500px;">“Minimalism and performance in one piece. It’s perfect.” — Amaanyu</blockquote>
+  </section>
+  <footer>
+    <p>&copy; 2025 Amanyu Supplies N Co. All rights reserved.</p>
+    <p>For fun & educational purposes only.</p>
+  </footer>
+</body>
+</html>

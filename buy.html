@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Buy Inkspire</title>
+<style>body{font-family:sans-serif;padding:2rem;background:#f9f9f9}
+form{max-width:400px;display:flex;flex-direction:column}
+input,select{margin-bottom:1rem;padding:0.6rem;font-size:1rem;border-radius:4px;border:1px solid #ccc}
+button{padding:0.6rem;background:#000;color:white;border:none;border-radius:4px;cursor:pointer}
+a{color:#007bff;text-decoration:none}</style></head>
+<body><a href="index.html">&larr; Home</a><h1>Checkout</h1>
+<form id="orderForm">
+  <input id="name" placeholder="Full Name" required>
+  <input id="address" placeholder="Shipping Address" required>
+  <input id="phone" placeholder="Phone Number" required>
+  <select id="payment">
+    <option>Credit Card</option>
+    <option>UPI</option>
+    <option>COD</option>
+  </select>
+  <button type="submit">Place Order</button>
+</form>
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    sessionStorage.setItem("otp", otp);
+    sessionStorage.setItem("name", document.getElementById("name").value);
+    alert("Your OTP is: " + otp); // Simulate sending OTP
+    window.location.href = "otp.html";
+  });
+</script>
+</body></html>
