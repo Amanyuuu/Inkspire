@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Track Your Order | Inkspare</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      padding: 2rem;
+      text-align: center;
+    }
+    .step {
+      margin: 1rem auto;
+      padding: 1rem;
+      max-width: 500px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    .active {
+      border-color: green;
+      background: #e0ffe0;
+    }
+    h2 { color: #222; }
+    .bar {
+      width: 80%;
+      height: 12px;
+      margin: 1.5rem auto;
+      background: #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 75%;
+      background: green;
+      transition: width 1s ease;
+    }
+  </style>
+</head>
+<body>
+  <h2>📦 Track Your Inkspare Order</h2>
+  <div class="bar"></div>
+  <div class="step active">✅ Packed</div>
+  <div class="step active">🚚 Shipped</div>
+  <div class="step active">📍 Out for Delivery</div>
+  <div class="step">🏠 Delivered</div>
+</body>
+</html>
