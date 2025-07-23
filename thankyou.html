@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Thank You | Inkspire</title>
+  <title>Thank You | Inkspare</title>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -31,18 +31,35 @@
     a:hover {
       background: #444;
     }
+    #order-id, #delivery {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <h1>✅ Payment Complete!</h1>
   <p>Thank you <span id="user-name"></span> for your order.</p>
-  <p>Your Inkspire™ pen is being shipped.</p>
+  <div id="order-id"></div>
+  <div id="delivery"></div>
+  <p>Your Inkspare™ pen is being shipped.</p>
   <a href="index.html">← Back to Home</a>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const name = params.get("name") || "Customer";
     document.getElementById("user-name").textContent = decodeURIComponent(name);
+
+    const orderId = "ORD-" + Math.floor(100000 + Math.random() * 900000);
+    document.getElementById("order-id").textContent = "Order ID: " + orderId;
+
+    const today = new Date();
+    const deliveryStart = new Date(today.getTime() + 3 * 86400000);
+    const deliveryEnd = new Date(today.getTime() + 6 * 86400000);
+    const options = { month: "short", day: "numeric" };
+    const deliveryText = `Estimated Delivery: ${deliveryStart.toLocaleDateString("en-US", options)} - ${deliveryEnd.toLocaleDateString("en-US", options)}`;
+    document.getElementById("delivery").textContent = deliveryText;
   </script>
 </body>
 </html>
